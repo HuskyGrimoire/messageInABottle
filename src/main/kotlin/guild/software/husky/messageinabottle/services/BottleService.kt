@@ -12,23 +12,22 @@ class BottleService(private val bottleRepository: BottleRepository) {
 
     fun saveBottle(bottle: Bottle) {
         val creatorId = getSessionUuid()
-        val bottleEntity = BottleEntity(
-                UUID.randomUUID(),
-                bottle.message,
-                creatorId,
-                false
-        )
+        val bottleEntity = BottleEntity()
+        bottleEntity.creatorId = creatorId
+        bottleEntity.message = bottle.message
+        bottleEntity.id = UUID.randomUUID()
+        bottleEntity.viewed = false
         bottleRepository.save(bottleEntity)
     }
 
     fun retrieveBottle(): Bottle {
         val sessionId = getSessionUuid()
-        val bottleEntities = bottleRepository.findFirstByCreatorIdIsNot(sessionId)
-        bottleRepository.deleteById(bottleEntities.id)
-        return Bottle(bottleEntities.message)
+        val bottleEntities = bottleRepository.findFirstByViewedFalseAndCreatorIdIsNot(sessionId)
+        bottleRepository.markBottleAsViewed(bottleEntities.id!!)
+        return Bottle(bottleEntities.message!!)
     }
 
-    private fun getSessionUuid():UUID{
-        return UUID.fromString(RequestContextHolder.currentRequestAttributes().sessionId);
+    private fun getSessionUuid(): String {
+        return RequestContextHolder.currentRequestAttributes().sessionId
     }
 }
