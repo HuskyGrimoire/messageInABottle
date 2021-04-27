@@ -18,11 +18,11 @@ interface BottleRepository : CrudRepository<BottleEntity, UUID> {
             "set viewed = true " +
             "WHERE id = (" +
             "SELECT id from public.bottles " +
-            "WHERE creator_id != :creatorId " +
+            "WHERE creator_id != :creatorid " +
             "and viewed != true " +
             "ORDER BY id LIMIT 1" +
             ") " +
             "returning *;")
-    fun markBottleAsViewed(@Param("creatorId") creatorId: String): BottleEntity
+    fun markBottleAsViewed(@Param("creatorid") creatorid: String): BottleEntity
 }
 
