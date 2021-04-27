@@ -1,0 +1,184 @@
+body{
+  background-color: lightskyblue;
+  font-family: titleFont, sans-serif;
+}
+
+.title{
+  background: #FFEE00;
+  background: -webkit-linear-gradient(to bottom, #FFEE00 24%, #FF0550 100%);
+  background: -moz-linear-gradient(to bottom, #FFEE00 24%, #FF0550 100%);
+  background: linear-gradient(to bottom, #FFEE00 24%, #FF0550 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 50px;
+  top: 0px;
+  left: 0px;
+  width:100%;
+  height: 80px;
+}
+
+@font-face {
+  font-family: titleFont;
+  src: url(./title.ttf);
+}
+
+.horizonClouds{
+  background-image: url("./bottomclouds.svg");
+}
+
+.backgroundCloud1{
+  background-image: url("./cloud1.svg");
+}
+
+.backgroundCloud2{
+  background-image: url("./cloud2.svg");
+}
+
+.ocean{
+  background-color: rgb(0,180,255);
+  position: absolute;
+  width: 100%;
+  top: 20%;
+  height:80%;
+}
+
+#waveContainer .wave{
+  background-image: url("./wave2.svg");
+  width: 60px;
+  height: 70px;
+  position: relative;
+  left: 10px;
+  top: 20px;
+  opacity: 0.8;
+}
+
+@-webkit-keyframes waveMove {
+  from {
+    transform: scale(inherit);
+    opacity: inherit;
+  }
+  to {
+    top: calc(inherit - 10px);
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+}
+
+@keyframes waveMove {
+  from {
+    transform: scale(inherit);
+    opacity: inherit;
+  }
+  to {
+    top: calc(inherit - 10px);
+    transform: scale(0.5);
+    opacity: 0.3;
+  }
+}
+
+.wave:nth-child(odd) {
+  animation-name: waveMove;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.wave:nth-child(even) {
+  animation-name: waveMove;
+  animation-duration: 2.5s;
+  animation-delay: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#writeMessageModal{
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: -660px;
+  left:20%;
+  z-index: 999;
+}
+
+#readMessageModal{
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: -660px;
+  left:20%;
+  z-index: 999;
+}
+
+#readArea {
+  width: 100%;
+  height: 100%;
+  background-color: wheat;
+  background-image: url("./messageStationary.png");
+  background-size: contain;
+}
+
+#readMessageInput{
+  font-family: 'Caveat', cursive;
+  background: rgba(255,255,255,0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding-top: 66px;
+  padding-left: 22px;
+  padding-right: 23px;
+  line-height: 45px;
+  font-size: 31px;
+}
+
+
+
+#writingArea {
+  width: 100%;
+  height: 100%;
+  background-color: wheat;
+  background-image: url("./messageStationary.png");
+  background-size: contain;
+}
+
+#writeMessageInput{
+  font-family: 'Caveat', cursive;
+  background: rgba(255,255,255,0);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  padding-top: 66px;
+  padding-left: 22px;
+  padding-right: 23px;
+  line-height: 45px;
+  font-size: 31px;
+}
+
+.button {
+  position: relative;
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  padding: 14px;
+  text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
+  -webkit-border-radius: 12.567567567567567px;
+  -moz-border-radius: 12.567567567567567px;
+  border-radius: 12.567567567567567px;
+  background: rgb(0, 150, 255);
+  background: -moz-linear-gradient(90deg, rgb(0, 150, 255) 59%, rgb(222, 167, 255) 99%);
+  background: -webkit-linear-gradient(90deg, rgb(0, 150, 255) 59%, rgb(222, 167, 255) 99%);
+  background: -o-linear-gradient(90deg, rgb(0, 150, 255) 59%, rgb(222, 167, 255) 99%);
+  background: -ms-linear-gradient(90deg, rgb(0, 150, 255) 59%, rgb(222, 167, 255) 99%);
+  background: linear-gradient(0deg, rgb(0, 150, 255) 59%, rgb(222, 167, 255) 99%);
+  -webkit-box-shadow: 3px 9px 6px rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 3px 9px 6px rgba(255, 255, 255, 0.7);
+  box-shadow: 3px 9px 6px rgba(255, 255, 255, 0.7);
+  font-size: 22px;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 15px;
+  width: 75px;
+  height: 20px;
+}

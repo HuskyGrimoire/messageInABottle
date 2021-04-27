@@ -1,0 +1,54 @@
+<html>
+<header>
+  <link type="text/css" rel="stylesheet" href="./style.css">
+  <script src="./home.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+</header>
+<body>
+<div class="sky">
+  <div class="clouds">
+    <div class="backgroundClouds">
+      <div class="backgroundCloud1"></div>
+      <div class="backgroundCloud2"></div>
+    </div>
+    <div class="horizonClouds"></div>
+  </div>
+  <div class="ocean">
+    <div class="wavesContainer" id="waveContainer">
+      <div class="wave"></div>
+    </div>
+  </div>
+</div>
+
+<div id="writeButton" onclick="move(document.getElementById('writeMessageModal'), 'down', 800, 300)">Write</div>
+<div id="readButton" onclick="readMessage()">Read</div>
+<div id="writeMessageModal">
+  <div id="writingArea">
+    <textarea name="textarea" id="writeMessageInput" cols="30" rows="5"></textarea>
+  </div>
+  <div id="sendButton" class="button left" onclick="sendBottle()">send</div>
+  <div id="cancel" class="button right" onclick="move(document.getElementById('writeMessageModal'), 'up', 800, 300)">Cancel</div>
+</div>
+
+<div id="readMessageModal">
+  <div id="readArea">
+    <textarea name="readText" id="readMessageInput" cols="30" rows="5" disabled>I love huskies!</textarea>
+<!--    <textarea name="textarea" id="writeMessageInput" cols="30" rows="5"></textarea>-->
+  </div>
+  <div id="close" class="button right" onclick="move(document.getElementById('readMessageModal'), 'up', 800, 300)">Close</div>
+</div>
+
+
+<!--<div class="centeredModalWrapper">-->
+<!--  <div class="centeredModal">-->
+<!--    <div class="message">-->
+<!--      <div class="title">.</div>-->
+<!--    </div>-->
+<!--    <div class="leftButton"></div>-->
+<!--    <div class="centerButton"></div>-->
+<!--    <div class="rightButton"></div>-->
+<!--  </div>-->
+<!--</div>-->
+</body>
+</html>

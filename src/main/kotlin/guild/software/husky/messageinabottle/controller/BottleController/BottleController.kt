@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*
 class BottleController(private val bottleService: BottleService) {
 
     @PostMapping("/")
-    fun createMessage(@RequestBody message: String) {
-        val bottle = Bottle(message)
+    fun createMessage(@RequestBody messageRequest: MessageRequest) {
+        val bottle = Bottle(messageRequest.message)
         bottleService.saveBottle(bottle)
     }
 
