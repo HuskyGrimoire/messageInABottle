@@ -18,7 +18,7 @@ interface BottleRepository : CrudRepository<BottleEntity, UUID> {
             "set viewed = true " +
             "WHERE id = (" +
             "SELECT id from public.bottles " +
-            "WHERE creator_id != :creatorid " +
+            "WHERE creatorid != :creatorid " +
             "and viewed != true " +
             "ORDER BY id LIMIT 1" +
             ") " +
