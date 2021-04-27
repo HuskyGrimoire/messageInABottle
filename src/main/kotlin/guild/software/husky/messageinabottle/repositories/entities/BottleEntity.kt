@@ -44,7 +44,7 @@ open class BottleEntity {
     @get:Column(name = "message")
     open var message: String? = null
 
-    @get:Column(name = "creatorId")
+    @get:Column(name = "creatorid")
     open var creatorId: String? = null
 
     @get:Column(name = "viewed")
