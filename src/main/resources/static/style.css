@@ -1,6 +1,8 @@
 body{
-  background-color: lightskyblue;
   font-family: titleFont, sans-serif;
+  background-color: rgb(38, 172, 255);
+  padding: 0px;
+  margin: 0px auto;
 }
 
 .title{
@@ -22,28 +24,69 @@ body{
   src: url(./title.ttf);
 }
 
-.horizonClouds{
-  background-image: url("./bottomclouds.svg");
+.clouds{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
 }
 
-.backgroundCloud1{
-  background-image: url("./cloud1.svg");
+.cloud1{
+  position: absolute;
+  background-size: contain;
+  background-image: url("./images/clouds/cloud1.png");
+  top: 80px;
+  left: 20px;
+  width: 420px;
+  height: 271px;
+  animation-name: cloudMove;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 0.2s;
 }
 
-.backgroundCloud2{
-  background-image: url("./cloud2.svg");
+.cloud2{
+  position: absolute;
+  background-size: contain;
+  background-image: url("./images/clouds/cloud2.png");
+  top: 70px;
+  left: 490px;
+  width: 420px;
+  height: 271px;
+  animation-name: cloudMove;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-delay: 0.5s;
+}
+
+.cloud3{
+  position: absolute;
+  background-size: contain;
+  background-image: url("./images/clouds/cloud3.png");
+  top: 80px;
+  left: 960px;
+  width: 420px;
+  height: 271px;
+  animation-name: cloudMove;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .ocean{
   background-color: rgb(0,180,255);
+  background-color: rgb(0, 92, 255);
   position: absolute;
   width: 100%;
-  top: 20%;
+  top: 30%;
   height:80%;
 }
 
 #waveContainer .wave{
-  background-image: url("./wave2.svg");
+  background-image: url("./wave3.svg");
   width: 60px;
   height: 70px;
   position: relative;
@@ -52,17 +95,17 @@ body{
   opacity: 0.8;
 }
 
-@-webkit-keyframes waveMove {
-  from {
-    transform: scale(inherit);
-    opacity: inherit;
-  }
-  to {
-    top: calc(inherit - 10px);
-    transform: scale(0.5);
-    opacity: 0.3;
-  }
-}
+/*@-webkit-keyframes waveMove {*/
+/*  from {*/
+/*    transform: scale(inherit);*/
+/*    opacity: inherit;*/
+/*  }*/
+/*  to {*/
+/*    top: calc(inherit - 10px);*/
+/*    transform: scale(0.5);*/
+/*    opacity: 0.3;*/
+/*  }*/
+/*}*/
 
 @keyframes waveMove {
   from {
@@ -73,6 +116,18 @@ body{
     top: calc(inherit - 10px);
     transform: scale(0.5);
     opacity: 0.3;
+  }
+}
+
+@keyframes cloudMove {
+  from {
+    transform: scale(inherit);
+    opacity: inherit;
+  }
+  to {
+    top: calc(inherit - 10px);
+    transform: scale(0.95);
+    opacity: 0.9;
   }
 }
 
@@ -89,6 +144,22 @@ body{
   animation-delay: 0.5s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+#writeButton{
+  display: block;
+  left: 20px;
+  top: 10px;
+  z-index: 999;
+  position: absolute;
+}
+
+#readButton{
+  display: block;
+  left: 110px;
+  top: 10px;
+  z-index: 999;
+  position: absolute;
 }
 
 #writeMessageModal{
