@@ -253,3 +253,11 @@ body{
   width: 75px;
   height: 20px;
 }
+
+#horizon{
+  position: absolute;
+  top: 28%;
+  height: 2%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(38, 172, 255, 0), rgba(0, 92, 255, 1));
+}
